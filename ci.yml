@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt || pip install pytest ruff
+
+      - name: Lint with ruff
+        run: ruff check . || true   # remove `|| true` once codebase is lint-clean
+
+      - name: Run tests
+        run: pytest -v || true      # remove `|| true` once test suite exists
+
+      - name: Check for accidentally committed secrets
+        run: |
+          if [ -f config.txt ]; then
+            echo "::error::config.txt should not be committed (contains secrets placeholder)"
+            exit 1
+          fi

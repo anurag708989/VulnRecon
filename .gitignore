@@ -1,0 +1,20 @@
+# Secrets / local config
+config.txt
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# Scan output
+vulnrecon_results/
+vulnrecon_ultra_results/
+*.log
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

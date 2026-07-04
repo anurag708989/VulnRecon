@@ -1,0 +1,14 @@
+# Copy this file to config.txt and fill in your own values.
+# config.txt is git-ignored — never commit real API keys.
+
+shodan_api_key=
+telegram_bot_token=
+telegram_chat_id=
+
+threads=20
+timeout=10
+
+priority_threshold=0
+confidence_threshold=0.0
+
+output_dir=vulnrecon_results
