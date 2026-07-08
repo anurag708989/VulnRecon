@@ -8,8 +8,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 <p align="center">
-  <img src="docs/images/banner-placeholder.png" alt="VulnRecon banner" width="800">
-  <br><em>(Add a real screenshot/GIF of the Rich CLI output here — see docs/images/README.md)</em>
+  <img src="/images/image1.png" alt="VulnRecon banner" width="800">
 </p>
 
 ---
@@ -234,3 +233,11 @@ Released under the [MIT License](LICENSE) — see file for details.
 ---
 
 <p align="center">Made with ☕ by the open-source security community — forked/refactored from VulnDetox Labs' original VulnRecon prototypes.</p>
+
+
+![Alt text](images/image1.png)
+![Alt text](images/image2.png)
+![Alt text](images/image3.png)
+![Alt text](images/image4.png)
+
+
